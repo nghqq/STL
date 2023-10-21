@@ -28,7 +28,7 @@ void main()
 	std::cout << std::endl;
 #endif // STL_VECTOR
 
-	vector_properties(vec)
+	vector_properties(vec);
 }
 template<typename T>
 void vector_properties(const std::vector<T>& vec) 

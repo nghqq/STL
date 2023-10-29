@@ -38,6 +38,10 @@ void main()
 	std::cout << "¬ведите индекс: "; std::cin >> del_index;
 	vec.erase(erased_it + del_index);
 	print_vector(vec);
+	/*for (int i = 0; i < vec.size(); i++)
+	{
+		std::cout << vec.at(i) << tab;
+	}*/
 	
 	
 	
@@ -53,11 +57,19 @@ void vector_properties(const std::vector<T>& vec)
 
 void print_vector(const std::vector<double>& vec)
 {
-	for (int i = 0; i < vec.size(); i++)
+	try
 	{
-		std::cout << vec[i] << tab;
+		for (int i = 0; i < vec.size() * 2; i++)
+		{
+			//std::cout << vec[i] << tab;
+			std::cout << vec.at(i) << tab;
+		}
+		std::cout << std::endl;
 	}
-	std::cout << std::endl;
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }
 void iterator (const std::vector<double>& vec)
 {

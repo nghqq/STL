@@ -68,7 +68,7 @@ public:
 	
 		for (char* pch = strtok(time_str_buffer,delimiters); pch; pch=strtok(NULL,delimiters))
 			units[n++] = std::atoi(pch);
-			for (int i : units)std::cout << i << tab; std::cout << std::endl;
+			//for (int i : units)std::cout << i << tab; std::cout << std::endl;
 			//for (char* i : sz_units)std::cout << i << tab; std::cout << std::endl;
 			int colon_position = strchr(time_str, ':') - time_str;
 			if (colon_position > 2)
@@ -76,7 +76,7 @@ public:
 				std::reverse(units, units + 5);
 				std::swap(units[0], units[1]);
 			}
-			for (int i : units)std::cout << i << tab; std::cout << std::endl;
+			//for (int i : units)std::cout << i << tab; std::cout << std::endl;
 			//for (char* i : sz_units)std::cout << i << tab; std::cout << std::endl;
 			std::tm tm{};
 			//std::time(&time);
@@ -105,6 +105,38 @@ public:
 		crime_time[strlen(crime_time) - 1] = 0;
 		return os << crime_time << ": " << obj.get_place()<<", " << obj.get_violations();
 	}
+	class LicencePlate
+	{
+		std::string plate;
+	public:
+		const std::string& get_plate()const
+		{
+			return plate;
+		}
+		void set_plate(const std::string& plate)
+		{
+			if (plate.size() < 10)this->plate = plate;
+			else this->plate = "Error Format ";
+		}
+		LicencePlate(const std::string& plate) 
+		{
+			set_plate(plate);
+		}
+		~LicencePlate(){}
+
+		bool operator<(const LicencePlate& other)const 
+		{
+			return this->plate < other.plate;
+		}
+		bool operator>(const LicencePlate& other)const 
+		{
+			return this->plate > other.plate;
+		}
+	};
+	std::ostream& operator <<(std::ostream& os, const LicencePlate& obj) 
+	{
+		return os << obj.get_plate();
+	}
 
 void main() 
 {
@@ -114,6 +146,26 @@ void main()
 	//std::cout << delimiter << std::endl;
 	//crime.set_time("2023/10/24 4:20");
 
-	Crime crime(1, "ул.Ленина", "16:20 24/10/2023");
-	std::cout << crime << std::endl;
-}
+	//Crime crime(1, "ул.Ленина", "16:20 24/10/2023");
+	//std::cout << crime << std::endl;
+
+	//LicencePlate plate("m777ab"); std::cout << plate << std::endl;
+	//LicencePlate plate_1("VasyaTupenko"); std::cout << plate_1 << std::endl;
+
+	std::map < LicencePlate, std::list<Crime>> base
+	{
+		{LicencePlate("m777ab"),{Crime(1,"ул.Ленина","12:20 18.05.2023"),Crime(3,"ул.Ленина","12:20 18.05.2023")}},
+		{LicencePlate("m001bb"),{Crime(4,"ул.Космонавтов","22:20 20.10.2023"),Crime(5,"ул.Космонавтов","22:30 18.05.2023"),Crime(6,"ул.Космонавтов","22:30 18.05.2023")}},
+		{LicencePlate("a358nt"),{Crime(2,"ул.Пушкина","14:25 22.10.2023"),Crime(9,"ул.Пушкина","14:00 22.10.2023")}},
+	};
+	for (std::map<LicencePlate, std::list<Crime>>::iterator bIt = base.begin(); bIt != base.end(); bIt++) 
+	{
+		std::cout << bIt->first << ":\n";
+		for (std::list<Crime>::iterator it = bIt->second.begin(); it != bIt->second.end(); it++)
+		{
+			std::cout << tab << *it << ":\n";
+		}
+		std::cout << std::endl;
+	}
+	
+ }

@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include<Windows.h>
 #include<iostream>
 #include<fstream>
@@ -13,23 +13,23 @@
 
 const std::map<int, std::string> VIOLATIONS =
 {
-	{0,"Не определено"},
-	{1, "Превышение скорости"},
-	{2, "Парковка в неположенном месте"},
-	{3,"Проезд на красный свет светофора"},
-	{4, "Езда в нетрезвом состояние"},
-	{5, "Оскорбление офицера"},
-	{6, "Неподчинение приказам офицера"},
-	{7, "Пересечение сплошной"},
-	{8, "Оставление места ДТП"},
-	{9, "Ремень безопасности"}
+	{0,"РќРµ РѕРїСЂРµРґРµР»РµРЅРѕ"},
+	{1, "РџСЂРµРІС‹С€РµРЅРёРµ СЃРєРѕСЂРѕСЃС‚Рё"},
+	{2, "РџР°СЂРєРѕРІРєР° РІ РЅРµРїРѕР»РѕР¶РµРЅРЅРѕРј РјРµСЃС‚Рµ"},
+	{3,"РџСЂРѕРµР·Рґ РЅР° РєСЂР°СЃРЅС‹Р№ СЃРІРµС‚ СЃРІРµС‚РѕС„РѕСЂР°"},
+	{4, "Р•Р·РґР° РІ РЅРµС‚СЂРµР·РІРѕРј СЃРѕСЃС‚РѕСЏРЅРёРµ"},
+	{5, "РћСЃРєРѕСЂР±Р»РµРЅРёРµ РѕС„РёС†РµСЂР°"},
+	{6, "РќРµРїРѕРґС‡РёРЅРµРЅРёРµ РїСЂРёРєР°Р·Р°Рј РѕС„РёС†РµСЂР°"},
+	{7, "РџРµСЂРµСЃРµС‡РµРЅРёРµ СЃРїР»РѕС€РЅРѕР№"},
+	{8, "РћСЃС‚Р°РІР»РµРЅРёРµ РјРµСЃС‚Р° Р”РўРџ"},
+	{9, "Р РµРјРµРЅСЊ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё"}
 };
 
 class Crime 
 {
-	int id; // номер статьи
-	std::string place; // место нарушения
-	time_t time;		// время нарушения
+	int id; // РЅРѕРјРµСЂ СЃС‚Р°С‚СЊРё
+	std::string place; // РјРµСЃС‚Рѕ РЅР°СЂСѓС€РµРЅРёСЏ
+	time_t time;		// РІСЂРµРјСЏ РЅР°СЂСѓС€РµРЅРёСЏ
 public:
 	int get_id()const 
 	{
@@ -218,7 +218,7 @@ return ifs;
 		//std::cout << delimiter << std::endl;
 		//crime.set_time("2023/10/24 4:20");
 
-		//Crime crime(1, "ул.Ленина", "16:20 24/10/2023");
+		//Crime crime(1, "СѓР».Р›РµРЅРёРЅР°", "16:20 24/10/2023");
 		//std::cout << crime << std::endl;
 
 		//LicencePlate plate("m777ab"); std::cout << plate << std::endl;
@@ -226,9 +226,9 @@ return ifs;
 
 		/*std::map < LicencePlate, std::list<Crime>> base
 		{
-			{LicencePlate("m777ab"),{Crime(1,"ул.Ленина","12:20 18.05.2023"),Crime(3,"ул.Ленина","12:20 18.05.2023")}},
-			{LicencePlate("m001bb"),{Crime(4,"ул.Космонавтов","22:20 20.10.2023"),Crime(5,"ул.Космонавтов","22:30 18.05.2023"),Crime(6,"ул.Космонавтов","22:30 18.05.2023")}},
-			{LicencePlate("a358nt"),{Crime(2,"ул.Пушкина","14:25 22.10.2023"),Crime(9,"ул.Пушкина","14:00 22.10.2023")}},
+			{LicencePlate("m777ab"),{Crime(1,"СѓР».Р›РµРЅРёРЅР°","12:20 18.05.2023"),Crime(3,"СѓР».Р›РµРЅРёРЅР°","12:20 18.05.2023")}},
+			{LicencePlate("m001bb"),{Crime(4,"СѓР».РљРѕСЃРјРѕРЅР°РІС‚РѕРІ","22:20 20.10.2023"),Crime(5,"СѓР».РљРѕСЃРјРѕРЅР°РІС‚РѕРІ","22:30 18.05.2023"),Crime(6,"СѓР».РљРѕСЃРјРѕРЅР°РІС‚РѕРІ","22:30 18.05.2023")}},
+			{LicencePlate("a358nt"),{Crime(2,"СѓР».РџСѓС€РєРёРЅР°","14:25 22.10.2023"),Crime(9,"СѓР».РџСѓС€РєРёРЅР°","14:00 22.10.2023")}},
 		};
 		print(base);
 		save(base, "base.txt");*/
@@ -236,11 +236,11 @@ return ifs;
 		print(base);
 
 		/*LicencePlate plate;
-		std::cout << "Введите номер: "; std::cin >> plate;
+		std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ: "; std::cin >> plate;
 		print(base, plate);*/
 		/*LicencePlate start_plate, end_plate;
-		std::cout << "Введите начальный номер: "; std::cin >> start_plate;
-		std::cout << "Введите конечный номер номер: "; std::cin >> end_plate;
+		std::cout << "Р’РІРµРґРёС‚Рµ РЅР°С‡Р°Р»СЊРЅС‹Р№ РЅРѕРјРµСЂ: "; std::cin >> start_plate;
+		std::cout << "Р’РІРµРґРёС‚Рµ РєРѕРЅРµС‡РЅС‹Р№ РЅРѕРјРµСЂ РЅРѕРјРµСЂ: "; std::cin >> end_plate;
 		print(base, start_plate, end_plate);*/
 		//system("PAUSE");
 		//system("CLS");
@@ -250,12 +250,12 @@ return ifs;
 		do
 		{
 			system("CLS");
-			std::cout << "1.Вывод всей базы ;" << std::endl;
-			std::cout << "2.Вывод информации по номеру ;" << std::endl;
-			std::cout << "3.Вывод информации по диапазону номеров ;" << std::endl;
-			std::cout << "4.Добавить нарушение ;" << std::endl;
-			std::cout << "5.Сохранить базу в файл ;" << std::endl;
-			std::cout << "6.Загрузить базу из файла ;" << std::endl;
+			std::cout << "1.Р’С‹РІРѕРґ РІСЃРµР№ Р±Р°Р·С‹ ;" << std::endl;
+			std::cout << "2.Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё РїРѕ РЅРѕРјРµСЂСѓ ;" << std::endl;
+			std::cout << "3.Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё РїРѕ РґРёР°РїР°Р·РѕРЅСѓ РЅРѕРјРµСЂРѕРІ ;" << std::endl;
+			std::cout << "4.Р”РѕР±Р°РІРёС‚СЊ РЅР°СЂСѓС€РµРЅРёРµ ;" << std::endl;
+			std::cout << "5.РЎРѕС…СЂР°РЅРёС‚СЊ Р±Р°Р·Сѓ РІ С„Р°Р№Р» ;" << std::endl;
+			std::cout << "6.Р—Р°РіСЂСѓР·РёС‚СЊ Р±Р°Р·Сѓ РёР· С„Р°Р№Р»Р° ;" << std::endl;
 			key = _getch();
 			switch (key)
 			{
@@ -263,7 +263,7 @@ return ifs;
 			case '2':
 			{
 				LicencePlate plate;
-				std::cout << "Введите номер: "; std::cin >> plate;
+				std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ: "; std::cin >> plate;
 				print(base, plate);
 				break;
 			}
@@ -271,8 +271,8 @@ return ifs;
 			{
 				LicencePlate start_plate;
 				LicencePlate end_plate;
-				std::cout << "Введите начальный номер: "; std::cin >> start_plate;
-				std::cout << "Введите конечный номер: "; std::cin >> end_plate;
+				std::cout << "Р’РІРµРґРёС‚Рµ РЅР°С‡Р°Р»СЊРЅС‹Р№ РЅРѕРјРµСЂ: "; std::cin >> start_plate;
+				std::cout << "Р’РІРµРґРёС‚Рµ РєРѕРЅРµС‡РЅС‹Р№ РЅРѕРјРµСЂ: "; std::cin >> end_plate;
 				print(base, start_plate, end_plate);
 			}
 				break;
@@ -281,14 +281,14 @@ return ifs;
 				LicencePlate plate;
 				std::string place;
 				int id;
-				std::cout << "Введите номер: "; std::cin >> plate;
-				std::cout << "Введите место: ";
+				std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ: "; std::cin >> plate;
+				std::cout << "Р’РІРµРґРёС‚Рµ РјРµСЃС‚Рѕ: ";
 				std::cin.clear();
 				std::cin.ignore();
 				SetConsoleCP(1251);
 				std::getline(std::cin, place);
 				SetConsoleCP(866);
-				std::cout << "Выберите совершенное нарушение:\n";
+				std::cout << "Р’С‹Р±РµСЂРёС‚Рµ СЃРѕРІРµСЂС€РµРЅРЅРѕРµ РЅР°СЂСѓС€РµРЅРёРµ:\n";
 				for (std::pair<int, std::string>i : VIOLATIONS)std::cout << i.first << ". " << i.second << std::endl;
 				std::cin >> id;
 				Crime crime(id, place, time(NULL));
@@ -337,7 +337,7 @@ void print(const std::map<LicencePlate, std::list<Crime>>& base, LicencePlate pl
 	}
 	catch (const std::exception& e)
 	{
-		std::cout << "В базе нет такого номера. " << std::endl;
+		std::cout << "Р’ Р±Р°Р·Рµ РЅРµС‚ С‚Р°РєРѕРіРѕ РЅРѕРјРµСЂР°. " << std::endl;
 	}
 }
 void print(const std::map<LicencePlate, std::list<Crime>>& base, LicencePlate start_plate, LicencePlate end_plate) 
